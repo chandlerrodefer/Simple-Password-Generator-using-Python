@@ -1,17 +1,31 @@
 # Simple-Password-Generator-using-Python
 A simple password generator created in Python. Takes user input for number of letters, symbols, and numbers desired for a password and then randomizes the order to create a stronger password.
-<h1>SIEM-Home-Lab</h1>
-<h2>Description</h2>
-In this lab, I set up a SIEM (Azure Sentinel) and connected it to an active VM (acting as my honeypot). Using this, I was able to monitor live attacks (Brute Forcing RDP) globally. I used a custom PowerShell script to search for the attackers' geographic location and created an Azure Sentinel map using this data.
-<br />
 
+import random
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
-<h2>Languages and Utilities Used</h2>
+print("Welcome to the PyPassword Generator!")
+nr_letters= int(input("How many letters would you like in your password?\n")) 
+nr_symbols = int(input(f"How many symbols would you like?\n"))
+nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-- <b>PowerShell</b> 
-- <b>Microsoft Azure</b>
-- <b>Microsoft Sentinel</b>
+password_list = []
 
-<h2>Environments Used </h2>
+for char in range(1, nr_letters + 1):
+   password_list += random.choice(letters)
 
-- <b>Windows 11</b> 
+for char in range(1, nr_symbols + 1):
+  password_list += random.choice(symbols)
+
+for char in range(1, nr_numbers + 1):
+  password_list += random.choice(numbers)
+
+random.shuffle(password_list)
+
+password = ""
+for char in password_list:
+  password += char
+
+print(f"Your password is: {password}")
