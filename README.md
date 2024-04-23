@@ -32,4 +32,6 @@ for char in password_list:
 
 print(f"Your password is: {password}")
 
+Photo of code:
+
 <img src="https://i.imgur.com/TP0TTOo.png" height="100%" width="100%" alt="Password generator"/>
