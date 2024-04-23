@@ -31,3 +31,5 @@ for char in password_list:
   password += char
 
 print(f"Your password is: {password}")
+
+<img src="https://imgur.com/a/vJRdjzX" height="80%" width="80%" alt="Password generator"/>
